@@ -117,7 +117,7 @@ namespace DogApp.Controllers
         public IActionResult All(string searchStringBreed, string searchStringName)
         {
 
-            List<DogAllViewModel> dogs = _dogService.GetDogs()
+            List<DogAllViewModel> dogs = _dogService.GetDogs(searchStringBreed, searchStringName)
                 .Select(dogFromDb=> new DogAllViewModel
                 {
                     Id=dogFromDb.Id,
